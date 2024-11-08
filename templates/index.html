@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rezepte</title>
+</head>
+<body>
+<h1>Rezepte</h1>
+    <ul>
+        {% for recipe in recipes %}
+            <li>{{ recipe.name }} (Schwierigkeit: {{ recipe.difficulty }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_recipe') }}">Rezept hinzufügen</a>
+
+</body>
+</html>

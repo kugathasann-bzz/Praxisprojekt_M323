@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezept bearbeiten</title>
+</head>
+<body>
+<form method="POST">
+    <label for="name">Name des Rezepts:</label><br>
+    <input type="text" id="name" name="name" value="{{ recipe.name }}" placeholder="Name des Rezepts" required><br><br>
+
+    <label for="ingredients">Zutaten (durch Komma trennen):</label><br>
+    <textarea id="ingredients" name="ingredients" placeholder="Zutaten eingeben" required>{{ recipe.ingredients|join(', ') }}</textarea><br><br>
+
+    <label for="instructions">Anleitung (durch Komma trennen):</label><br>
+    <textarea id="instructions" name="instructions" placeholder="Anleitung eingeben" required>{{ recipe.instructions|join(', ') }}</textarea><br><br>
+
+    <label for="difficulty">Schwierigkeit (1-5):</label><br>
+    <input type="number" id="difficulty" name="difficulty" min="1" max="5" value="{{ recipe.difficulty }}" required><br><br>
+
+    <input type="submit" value="Rezept aktualisieren">
+</form>
+</body>
+</html>
